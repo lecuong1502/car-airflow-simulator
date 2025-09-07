@@ -3,6 +3,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include "initialization.cpp"
+#include "utils.cuh"
 
 using namespace std;
 

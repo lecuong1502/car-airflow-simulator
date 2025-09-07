@@ -9,7 +9,8 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-# include "2Dgrid.cpp"
+#include "2Dgrid.cpp"
+#include "utils.hpp"
 
 using namespace std;
 
@@ -44,14 +45,14 @@ struct LBMCell {
 // LBMCell grid
 vector<LBMCell> lbm_grid(NX * NY);
 
-// Equilibrium distribution function
-void computeEquilibrium(float *feq, float rho, float ux, float uy) {
-    for (int i = 0; i < Q; ++i) {
-        float c_dot_u = (float)cx[i] * ux + (float)cy[i] * uy;
-        float u_sq = ux * ux + uy * uy;
-        feq[i] = weights[i] * rho * (1.0f + inv_cs_sq * c_dot_u + 0.5f * inv_cs_sq * inv_cs_sq * c_dot_u * c_dot_u - 0.5f * inv_cs_sq * u_sq);
-    }   
-}
+// // Equilibrium distribution function
+// void computeEquilibrium(float *feq, float rho, float ux, float uy) {
+//     for (int i = 0; i < Q; ++i) {
+//         float c_dot_u = (float)cx[i] * ux + (float)cy[i] * uy;
+//         float u_sq = ux * ux + uy * uy;
+//         feq[i] = weights[i] * rho * (1.0f + inv_cs_sq * c_dot_u + 0.5f * inv_cs_sq * inv_cs_sq * c_dot_u * c_dot_u - 0.5f * inv_cs_sq * u_sq);
+//     }   
+// }
 
 // Initialize all the system
 void initializeLBM(float initial_ux, float initial_uy, float initial_rho) {

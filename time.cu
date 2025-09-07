@@ -5,6 +5,7 @@
 #include "initialization.cpp"
 #include <iostream> 
 #include <cmath>
+#include "utils.cuh"
 
 using namespace std;
 
